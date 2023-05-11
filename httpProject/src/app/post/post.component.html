@@ -1,0 +1,12 @@
+<div *ngIf="loaded && post">
+  <h2>Post Detail #{{post.id}}</h2>
+
+  <input type="text" [(ngModel)]="post.title">
+  <br>
+  <a routerLink="/albums/{{post.id}}/photos">Photos</a><br>
+  <br>
+  <button (click)="updatePost()">Save</button>
+</div>
+<p *ngIf="!loaded">Loading post...</p>
+
+

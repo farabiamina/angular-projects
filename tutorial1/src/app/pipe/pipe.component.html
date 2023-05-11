@@ -1,0 +1,15 @@
+<p>date {{ myDate }}</p>
+<p>date pipe {{ myDate | date: "dd/MM/yyyy" }}</p>
+
+<p>{{ str | lowercase }}</p>
+<p>{{ str | uppercase }}</p>
+
+<p>{{ str | slice:3:5}}</p>
+
+<p>{{ num | percent }}</p>
+
+<p>{{ num | currency:"EUR" }}</p>
+
+<p>{{ num | number:'3.5-5' }}</p>
+
+<p>{{ num | currency: "RUB": 'symbol-narrow' }}</p>

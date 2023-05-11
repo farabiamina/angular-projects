@@ -1,0 +1,40 @@
+<!--<div *ngIf="product">-->
+<!--  <a href="" [title]="product.description">-->
+<!--    <h3>-->
+<!--      {{ product.name }}-->
+<!--    </h3>-->
+<!--  </a>-->
+<!--  <img [src]="product.image" alt="">-->
+<!--  <p>{{product.price | currency}}</p>-->
+<!--  <div *ngIf="product.description">-->
+<!--    <p>{{ product.description }}</p>-->
+<!--  </div>-->
+<!--  <button (click)="share()">Share</button>-->
+<!--  <button (click)="removeProduct(product.id)">Remove</button>-->
+<!--  <button (click)="notify.emit()">Notify</button>-->
+<!--</div>-->
+
+<!--<th *ngIf="product" scope="row">{{product.name}}</th>-->
+<!--<td>{{product.description}}</td>-->
+<!--<td>{{product.price}}</td>-->
+<!--<td>{{product.model}}</td>-->
+<!--<td><img [src]="product.image" style="width: 40px" alt=""></td>-->
+
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="product.image" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" [routerLink]="['/product-list', product.id]">{{product.name}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <p class="card-text">{{product.model}}</p>
+    <a href="#" class="btn btn-primary" (click)="removeProduct(product.id)">Remove</a>
+  </div>
+</div>
+
+<!--
+Component <-> UI
+
+
+
+-->
+

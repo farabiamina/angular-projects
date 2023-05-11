@@ -1,0 +1,26 @@
+<!--<app-product-form (add)="addProduct($event)"></app-product-form>-->
+<app-product-reactive-form  (add)="addProduct($event)"></app-product-reactive-form>
+<!--<div class="container" *ngFor="let product of products">-->
+<!--  <app-product-item-->
+<!--    [product]="product"-->
+<!--    (remove)="onProductRemove($event)"-->
+<!--    (notify)="onNotify()"-->
+<!--  ></app-product-item>-->
+<!--</div>-->
+
+
+<table class="table">
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th scope="col">Name</th>-->
+<!--    <th scope="col">Description</th>-->
+<!--    <th scope="col">Price</th>-->
+<!--    <th scope="col">Model</th>-->
+<!--    <th scope="col">Image</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<div class="d-flex flex-row flex-wrap">
+  <div *ngFor="let prod of products">
+    <app-product-item [product]="prod" (remove)="onProductRemove($event)"></app-product-item>
+  </div>
+</div>

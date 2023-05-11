@@ -1,0 +1,54 @@
+<div>
+  <form class="" #myForm="ngForm" (ngSubmit)="addProduct(myForm)">
+    <label for="nameFormsControl">Name</label>
+      <input
+        (ngModelChange)="onChange()"
+        [(ngModel)]="newProduct.name"
+        #name="ngModel"
+        type="text"
+        id="nameFormsControl"
+        name="name"
+        class="form-control"
+        minlength="5"
+        required
+        [ngClass]={error:name.invalid}
+      >
+    <div class="alert alert-danger" *ngIf="name.invalid || name.untouched" style="color: red">Невалидное значение</div>
+
+    <label for="priceFormsControl">Price</label>
+      <input
+        class="form-control"
+        [(ngModel)]="newProduct.price"
+        #price="ngModel"
+        type="number"
+        id="priceFormsControl"
+        name="price"
+        min="100"
+        required
+      >
+    <div class="alert alert-danger" *ngIf="price.invalid || price.untouched" style="color: red">Невалидное значение</div>
+
+    <label for="descFormsControl">Description</label>
+      <input
+        class="form-control"
+        #desc="ngModel"
+        [(ngModel)]="newProduct.description"
+        type="text"
+        id="descFormsControl"
+        name="description"
+      >
+    <label for="select">Model</label>
+    <select name="select" id="select"
+    [(ngModel)]="newProduct.model">
+      <option *ngFor="let mod of models" value="{{mod}}">{{mod}}</option>
+    </select>
+<!--    <button [disabled]="myForm.invalid" (click)="addProduct()">Add</button>-->
+    <input class="btn btn-success mt-3" type="submit" [disabled]="myForm.invalid" value="Add">
+  </form>
+
+<!--  <ul>-->
+<!--    <li *ngFor="let prod of products">-->
+<!--      <p>Name: {{ prod.name }} {{prod.price}} {{ prod.description }}</p>-->
+<!--    </li>-->
+<!--  </ul>-->
+</div>

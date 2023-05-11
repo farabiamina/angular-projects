@@ -1,0 +1,15 @@
+<div *ngIf="loaded && post">
+  <h2>Post Details</h2>
+  <input class="form-control" name="title" type="text" [(ngModel)]="post.title">
+  <button class="btn btn-success" (click)="updatePost()">Update</button>
+<!--  <a [routerLink]="['posts', post.id, 'photos']">Photos</a>-->
+  <a routerLink="comments">Comments</a>
+</div>
+
+<div *ngIf="!loaded">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

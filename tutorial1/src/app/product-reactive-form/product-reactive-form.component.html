@@ -1,0 +1,47 @@
+<div>
+  <form class="" [formGroup]="myForm" (ngSubmit)="addProduct(myForm)">
+    <label appHighlight="green" for="nameFormsControl">Name</label>
+    <input
+      appFocus
+      type="text"
+      id="nameFormsControl"
+      name="name"
+      class="form-control"
+      formControlName="prName"
+    >
+    <div class="alert alert-danger" *ngIf="myForm.controls['prName'].errors?.['invalidName']" style="color: red"> Невалидное значение</div>
+
+    <label for="priceFormsControl">Price</label>
+    <input
+      class="form-control"
+      type="number"
+      id="priceFormsControl"
+      name="price"
+      formControlName="prPrice"
+    >
+    <div class="alert alert-danger" *ngIf="myForm.controls['prPrice'].errors?.['priceInvalid']" style="color: red">Невалидное значение</div>
+
+    <label for="descFormsControl">Description</label>
+    <input
+      class="form-control"
+      type="text"
+      id="descFormsControl"
+      name="description"
+      formControlName="prDesc"
+    >
+    <label for="select">Model</label>
+    <select class="form-select" name="select" id="select"
+            formControlName="prModel">
+      <option *ngFor="let mod of models" value="{{mod}}">{{mod}}</option>
+    </select>
+    <!--    <button [disabled]="myForm.invalid" (click)="addProduct()">Add</button>-->
+    <input class="btn btn-success mt-3" type="submit" [disabled]="myForm.invalid" value="Add">
+  </form>
+
+  <!--  <ul>-->
+  <!--    <li *ngFor="let prod of products">-->
+  <!--      <p>Name: {{ prod.name }} {{prod.price}} {{ prod.description }}</p>-->
+  <!--    </li>-->
+  <!--  </ul>-->
+</div>
+

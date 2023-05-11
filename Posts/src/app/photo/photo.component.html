@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Body</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cm of comments">
+    <th scope="row">{{cm.id}}</th>
+    <td>{{cm.name}}</td>
+    <td>{{cm.email}}</td>
+    <td>{{cm.body}}</td>
+  </tr>
+  </tbody>
+</table>

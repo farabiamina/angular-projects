@@ -1,0 +1,21 @@
+h1 {
+  margin: 0;
+}
+
+div {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  background-color: #7883a4;
+  padding: 10px;
+}
+
+.button {
+  background-color: #3c4c83;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}

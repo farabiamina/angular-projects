@@ -1,0 +1,9 @@
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+.error {
+  border: 1px solid red;
+}
+
+input:focus {
+  outline: none;
+}

@@ -1,0 +1,43 @@
+<form [formGroup]="myForm" (ngSubmit)="addProduct(myForm)">
+  <label class="col-form-label" for="nameFormsControl">Name</label>
+  <input
+    type="text"
+    id="nameFormsControl"
+    name="name"
+    class="form-control"
+    formControlName="prName"
+  >
+  <div class="alert alert-danger"
+       *ngIf="myForm.controls['prName'].errors?.['nameInvalid']">
+    Не указано имя
+  </div>
+
+  <label class="col-form-label" for="priceFormsControl">Price</label>
+  <input
+    class="form-control"
+    type="number"
+    id="priceFormsControl"
+    name="price"
+    formControlName="prPrice"
+  >
+  <div class="alert alert-danger"
+       *ngIf="myForm.controls['prPrice'].invalid">
+    не делится(
+  </div>
+  <label class="col-form-label" for="descFormsControl">Description</label>
+  <input
+    class="form-control"
+    type="text"
+    id="descFormsControl"
+    name="description"
+    formControlName="prDesc"
+  >
+  <label class="col-form-label" for="select">Select model</label>
+  <select formControlName="prModel" class="form-select" name="model" id="select">
+    <option *ngFor="let mod of models" value="{{mod}}">{{mod}}</option>
+  </select>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">Add</button>
+  </div>
+</form>

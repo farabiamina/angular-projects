@@ -1,0 +1,13 @@
+<h3>Cart</h3>
+<div class="card">
+  <div *ngFor="let shipping of shippingCosts">
+    <span class="alert">{{ shipping.type }}</span>
+    <span>{{ shipping.value | currency }}</span>
+  </div>
+</div>
+
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>

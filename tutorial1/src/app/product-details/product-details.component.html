@@ -1,0 +1,16 @@
+<!--<div class="card" style="width: 18rem;">-->
+<!--  <img class="card-img-top" [src]="product.image" alt="Card image cap">-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title" [routerLink]="['/product-list', product.id]">{{product.name}}</h5>-->
+<!--    <p class="card-text">{{product.description}}</p>-->
+<!--    <p class="card-text">{{product.model}}</p>-->
+<!--    <a href="#" class="btn btn-primary" (click)="removeProduct(product.id)">Remove</a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<h2>Product Detail</h2>
+
+<div *ngIf="product">
+  <p>{{product.name}}</p>
+  <button (click)="addProductToCart(product)">Add to cart</button>
+</div>

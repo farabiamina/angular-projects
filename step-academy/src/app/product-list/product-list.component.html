@@ -1,0 +1,14 @@
+<div class="d-flex flex-row m-5 justify-content-between w-50">
+<!--  <app-product-form (add)="addProduct($event)"></app-product-form>-->
+  <app-product-reactive-form (add)="addProduct($event)"></app-product-reactive-form>
+  <div class="w-25 m-0">
+    <h2>Products</h2>
+    <div *ngFor="let product of products">
+      <app-product-item (remove)="onProductRemove($event)" [product]="product"></app-product-item>
+    </div>
+  </div>
+</div>
+
+
+
+

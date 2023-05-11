@@ -1,0 +1,8 @@
+<p>cart works!</p>
+<div *ngFor="let item of items">
+  {{item.name}} - {{item.price}}
+</div>
+
+<div *ngFor="let price of shippingPrices | async">
+    {{price.type}} - {{price.price}}
+</div>
